@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Brand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/simple-line-icons.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aguafina+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akronim">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alex+Brush">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amaranth">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amita">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Artifika">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Butterfly+Kids">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calligraffitti">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat+Brush">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cedarville+Cursive">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Clicker+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Condiment">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="index.html" style="font-size:56px;font-family:Akronim, cursive;color:#d6009e;">QGame</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1" style="font-family:'Aguafina Script', cursive;">
+                <ul class="nav navbar-nav ml-auto" style="font-size:25px;font-family:Amaranth, sans-serif;">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="font-size:17px;">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="features.html" style="font-size:17px;">Features</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html" style="font-size:17px;">About Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact-us.html" style="font-size:17px;">Contact Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="login.html" style="font-size:17px;">Login</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="registration.html" style="font-size:17px;">Register</a></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <main class="page registration-page">
+        <section class="clean-block clean-form dark">
+            <div class="container">
+                {% if msg=='success' %}
+                <div class="block-heading">
+                    <h2 class="text-success" style="font-family:Amita, cursive;">Registration</h2>
+                    <p style="font-size:25px;font-family:Amaranth, sans-serif;">Hello, Friend!</p>
+                    <p>Your registration was successfull. You can continue to login.</p>
+                </div>
+                {% else %}
+                <div class="block-heading">
+                    {% if msg=='pdm' %}
+                    <h2 class="text-danger">Password Mismatch</h2>
+                    <p>It seems you entered different password in the fields. Check once again</p>
+                    {% elif msg=='ear' %}
+                    <h2 class="text-danger">Email already registered</h2>
+                    <p>It seems the email you entered is already taken. If you dont remember password, you can head out to Forgot password and reset your password.</p>
+                    {% elif msg=='sp' %}
+                    <h2 class="text-danger">Server Problem</h2>
+                    <p>We are facing some issues creating your account. Please try again later.</p>
+                    {% else %}
+                    <h2 class="text-info">Registration</h2>
+                    <p style="font-size:25px;font-family:Amaranth, sans-serif;">Hello, Friend!</p>
+                    <p style="font-family:Amaranth, sans-serif;width:270px;">Enter your personal details and start journey with us.</p>
+                    {% endif %}
+                </div>
+                <form style="font-family:Amaranth, sans-serif;"  action="/register" method="post">
+                    <div class="form-group"><label for="name">Name</label><input class="form-control item" type="text" required="" pattern="[A-Za-z ]+" id="name" name='fullname'></div>
+                    <div class="form-group"><label for="password">Password</label><input class="form-control item" type="password" required="" minlength="8"  id="password" name='passw'></div>
+                    <div class="form-group"><label for="password">Confirm Password</label><input class="form-control item" type="password" required="" minlength="8" id="password" name="conpassw"></div>
+                    <div class="form-group"><label for="email">Email</label><input class="form-control item" type="text"  required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email" name='email'></div><button class="btn btn-primary btn-block" type="submit">Sign Up</button></form>
+                {% endif %}    
+            </div>
+        </section>
+    </main>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/theme.js') }}"></script>
+</body>
+
+</html>

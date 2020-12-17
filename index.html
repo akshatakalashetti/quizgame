@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/simple-line-icons.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aguafina+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akronim">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alex+Brush">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amaranth">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amita">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Artifika">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Butterfly+Kids">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calligraffitti">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat+Brush">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cedarville+Cursive">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Clicker+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Condiment">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="index.html" style="font-size:56px;font-family:Akronim, cursive;color:#d6009e;">QGame</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1" style="font-family:'Aguafina Script', cursive;">
+                <ul class="nav navbar-nav ml-auto" style="font-size:25px;font-family:Amaranth, sans-serif;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html" style="font-size:17px;">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="features.html" style="font-size:17px;">Features</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html" style="font-size:17px;">About Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact-us.html" style="font-size:17px;">Contact Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="login.html" style="font-size:17px;">Login</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="registration.html" style="font-size:17px;">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page landing-page">
+        <section class="clean-block clean-hero" style="background-image:url(&quot;/static/img/tech/image4.jpg&quot;);color:rgba(9, 162, 255, 0.85);font-family:'Aguafina Script', cursive;">
+            <div class="text">
+                <h2 style="font-family:Calligraffitti, cursive;"><br>Easy quiz platform for kids.<br></h2>
+                <p style="font-family:Amaranth, sans-serif;"><br>QGAME is a easy to use quiz platform for kids and students, Questions are updated regularly, so that, your kids experience questions that are in present trend and stay ahead of other students.<br><br></p>
+                <div class="container">
+                    <form action="/startquiz" method="post">
+                        <select name="Level" id='lev' class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color:#282821;width:154px;font-size:26px;font-family:Cookie, cursive;height:42px;">
+                            <option value="Level">Level</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                        <div>
+                            <select name='Subject' id='sub'  class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color:#282821;width:154px;font-size:26px;font-family:Cookie, cursive;height:42px;">
+                                <option value="Subject">Subject</option>
+                                <option value="hist">History</option>
+                                <option value="math">Maths</option>
+                                <option value="sci">Science</option>
+                                
+                            </select>
+                        </div>
+                        <div>
+                            <select name='Class' id='Class'  class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color:#282821;width:154px;font-size:26px;font-family:Cookie, cursive;height:42px;">
+                                <option value="Class">Class</option>
+                                <option value="cl(1-5)">Class(1-5)</option>
+                                <option value="cl(6-10)">Class(6-10)</option>
+                            </select>
+                        </div>
+                        <div class="container"><button class="btn btn-primary align-items-center align-content-center align-self-center" type="submit" style="width:211px;height:49px;padding:4px;font-size:32px;margin:4px;font-family:Cookie, cursive;color:#f7f7ec;background-color:#282821;">Start the quiz</button>
+                        </div>
+                        
+   
+                    </form>
+                </div>
+                    
+            </div>
+        </section>
+        <section class="clean-block clean-info dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info" style="font-family:Amita, cursive;">Info</h2>
+                    <p style="font-family:Amaranth, sans-serif;"><br>Get yourself updated with latest trends, and prepare for your quiz hastle free. We provide various categories where you test your knowledge in those fields.<br><br></p>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block features">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info" style="font-family:Amita, cursive;">Features</h2>
+                    <p style="font-family:Amaranth, sans-serif;"><br>Various categories and levels are available to test your knowledge, we provide login and registration feature, so that your progress is saved in your account.&nbsp;<br><br></p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 feature-box"><i class="icon-star icon"></i>
+                        <h4 style="font-family:Amaranth, sans-serif;">Bootstrap 4</h4>
+                        <p style="font-family:Amaranth, sans-serif;"><br>The entire website is designed in bootstrap 4. which provides easy to use interface and great design. Backend is designed with Python flask.<br><br></p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
+                        <h4 style="font-family:Amaranth, sans-serif;">Customizable</h4>
+                        <p style="font-family:Amaranth, sans-serif;"><br>Register and create your own account, Login to website on complete registration and start practicing, We will get your Progress saved to our servers.<br><br></p>
+                    </div>
+                    <div class="col-md-5 feature-box" style="font-family:Amaranth, sans-serif;"><i class="icon-screen-smartphone icon"></i>
+                        <h4>Responsive</h4>
+                        <p><br>Responsive design with great content, makes it exciting to use and get committed to quiz .<br><br></p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i>
+                        <h4 style="font-family:Amaranth, sans-serif;">All Browser Compatibility</h4>
+                        <p style="font-family:Amaranth, sans-serif;"><br>Website is designed by keeping in mind various browsers in market. Any latest browser should be able to load website without any difficulties. Start working in Smartphone, if you dont have a laptop or PC.<br><br></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block about-us">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info" style="font-family:Amita, cursive;">About Us</h2>
+                    <p style="font-family:Amaranth, sans-serif;">We are computer science students of sharanbasva university kalaburgi developed this website as class project to get practice of html and css.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card clean-card text-center">
+                            <div class="card-body info" style="font-family:Amaranth, sans-serif;">
+                                <h4 class="card-title">Akshata Kalashetti</h4>
+                                <p class="card-text">akshatakalashetty2001@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card clean-card text-center">
+                            <div class="card-body info" style="font-family:Amaranth, sans-serif;">
+                                <h4 class="card-title">Deepa</h4>
+                                <p class="card-text">deepagulbarga36@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card clean-card text-center" style="font-family:Amaranth, sans-serif;">
+                            <div class="card-body info">
+                                <h4 class="card-title">Humera Nausheen</h4>
+                                <p class="card-text">humnousheen01@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/theme.js') }}"></script>
+</body>
+
+</html>
